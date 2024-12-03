@@ -109,10 +109,11 @@ Replaces a stochastic parameter at `x` in the `modeldef`. Applies the user_func 
 - `cptostoch::Function` : Transformation from [-1,1]  to [`stoparam.lower_bound`, `stoparam.upper_bound`].
 """
 function setStochasticParameter!(modeldef::JifeModelDef, stoparam::StochasticJifeParameter, x, user_func::Function,cptostoch::Function=CPtoStoch)
-	vals = getElementbyPath(modeldef, stoparam.path)
-	splitstr = split(vals.content[1])
-	splitstr[stoparam.valspec] = string(user_func(cptostoch(x,stoparam)))
-	vals.content[1] = join(splitstr, " ")
+	setAttributeValbyPath!(modeldef, stoparam.path, string(user_func(cptostoch(x,stoparam))))
+	#vals = getElementbyPath(modeldef, stoparam.path)
+	#splitstr = split(vals.content[1])
+	#splitstr[stoparam.valspec] = string(user_func(cptostoch(x,stoparam)))
+	#vals.content[1] = join(splitstr, " ")
 	return nothing
 end
 
