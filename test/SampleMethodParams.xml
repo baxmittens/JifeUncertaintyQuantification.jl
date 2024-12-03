@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SparseGridParams
+	 N="5"
+	 CT="Float64"
+	 RT="VTUFile"
+	 init_lvl="3"
+	 maxlvl="2"
+	 tol="0.025"
+	 file="SampleMethodParams.xml"
+>
+	<Array
+		 julia:type="Int64,1"
+		 julia:fieldname="pointprobs"
+	>
+		1
+		1
+		1
+		1
+		1
+	</Array>
+</SparseGridParams>
