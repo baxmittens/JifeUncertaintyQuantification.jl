@@ -2,7 +2,7 @@ module JifeUncertaintyQuantification
 
 include("../../JifeInputFileHandler.jl/src/JifeInputFileHandler.jl")
 
-using .JifeInputFileHandler
+import .JifeInputFileHandler: JifeModelDef, getAllPathesbyAttribute, rename!, getElementbyPath,  format_ogs_path, setAttributeValbyPath!, getAllPathesbyAttribute!
 
 using XMLParser
 import XMLParser: Julia2XML, XMLFile, XML2Julia
